@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessibilité formulaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 
+    Améliorez l'accessibilité de ce formulaire.
+    Pensez à
+     1. utiliser des balises sémantiques lorsque c'est possible
+     2. utiliser les attributs lorsque c'est nécessaire
+      2.1. Documentation input: https://developer.mozilla.org/fr/docs/Web/HTML/Element/input#les_diff%C3%A9rents_types_de_champs_input
+      2.2. Documentation input attributs: https://developer.mozilla.org/fr/docs/Web/HTML/Element/input#attributs
+      2.3. Documentation label: https://developer.mozilla.org/fr/docs/Web/HTML/Element/label#attributs
+     3. vérifier le contraste du texte sur le fond
+     4. vérifier si, lorsque je change dans les réglages de mon navigateur la taille de police, le texte de mon site change en fonction.
+     5. vérifier si c'est possible de naviguer et soumettre le formulaire au clavier
+
+     Une fois que votre site est accessible, améliorez le SCSS (_form.scss).
+     -> Utilisez des variables pour éviter les répétitions.
+     Une variable se définit ainsi:
+        en haut du fichier: $myColor: green; OU $myFontSize: 12px;
+        Et ensuite, utilisez vos variables dans le SCSS à chaque fois que c'est nécessaire
+     -->
+    <main class="container">
+      <form class="row g-4" id="form-a11y">
+        <h1>Formulaire de création de compte</h1>
+        <div class="col-12">
+          <div class="radio-inputs-wrapper">
+            <div><input type="radio" /><span class="label">Madame</span></div>
+            <div><input type="radio" /><span class="label">Monsieur</span></div>
+            <div>
+              <input type="radio" /><span class="label"
+                >Ne veut pas le dire</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre nom</span>
+            <span class="mandatory">*</span>
+          </div>
+          <input class="input" type="text" placeholder="Nom" />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre prénom</span>
+            <span class="mandatory">*</span>
+          </div>
+          <input class="input" type="text" placeholder="Prénom" />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre email</span>
+            <span class="mandatory">*</span>
+          </div>
+          <input class="input" type="text" placeholder="Email" />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre mot de passe</span>
+            <span class="mandatory">*</span>
+          </div>
+
+          <input class="input" type="text" placeholder="****" />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre année de naissance</span>
+          </div>
+          <input class="input" type="text" placeholder="Année de naissance" />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <span class="label">Votre adresse</span>
+          </div>
+          <input class="input" type="text" placeholder="Adresse" />
+        </div>
+
+        <div class="col-12">
+          <span class="btn submit-btn">Soumettre le formulaire</span>
+        </div>
+      </form>
+    </main>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
