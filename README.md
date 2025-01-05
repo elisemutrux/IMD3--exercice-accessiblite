@@ -1,237 +1,63 @@
-# eikon parcel starter
+# Exercice accessibilité
 
-## Prérequis
+Rendez vous sur la page `index.html`. Celle-ci a été conçu par quelqu'un qui ne connait rien aux normes d'accessibilité. A vous de faire en sorte d'améliorer ce formulaire !
 
-- Git installé
-- NPM installé
+Les formulaires sont parmi les éléments des sites internets les moins accessibles. Parmi les erreurs courantes:
+
+- Absence de labels associés aux champs de formulaire
+- Manque d’indications pour les champs obligatoires
+- Absence de navigation clavier
+- Contrastes insuffisants
+- Placeholders utilisés à la place des labels
 
 ## Installation
 
-Cloner le repository git
-
 ```
-git clone git@github.com:eikon-frontend/starterkit.git <nom du projet>
-```
-
-Se rendre dans le dossier du projet, puis installer les dépendances avec NPM
-
-```
-cd <nom-du-projet>
 npm install
-```
-
-## Commandes
-
-Compiler la SCSS, aggréger le JS, lancer le serveur et écouter les changements
-
-```
 npm run dev
 ```
 
-Compiler pour la production
+## Etape 1
+
+Utilisez l'extension chrome "Wave" pour déterminer les points d'amélioration. Modifiez le code HTML et / ou SCSS afin de régler les problèmes.
+
+Pensez
+
+- à utiliser des balises sémantiques lorsque c'est possible
+- à utiliser les (bons) attributs, notamment pour les éléments `<input>`
+- au contraste des couleurs
+- à la taille du texte, afin qu'elle soit relative aux préférences de l'utilisateur·trice
+
+## Etape 2
+
+Modifiez le SCSS en exploitant les fonctionnalités de cette outil, notamment la création de variables.
+
+En SCSS, une variable se définit ainsi:
+
+1. Créez un fichier `_variables.scss` et importez le **tout en haut** de `main.scss`
+2. Dans le fichier `_variables.scss`, donnez un nom et une valeur à votre variable. Par exemple:
 
 ```
-npm run build
+$myColor: green; /* Variable se nomme $myColor et a pour valeur "green" */
+$myFontSize: 12px; /* Variable se nomme $myFontSize et a pour valeur "12px" */
 ```
 
-## Utilisation
-
-### HTML
-
-Inclure un fichier _header.html_ depuis un fichier HTML
-
-```html
-<include src="components/header.html"></include>
-```
-
-### SCSS
-
-Inclure un fichier _main.scss_ depuis un fichier HTML
-
-```html
-<link rel="stylesheet" href="scss/main.scss" />
-```
-
-Inclure un fichier _\_base.scss_ depuis un fichier SCSS
-
-```scss
-@import "base";
-```
-
-### JS
-
-Inclure un fichier _main.js_ depuis un fichier HTML
-
-```html
-<script src="js/main.js" type="module"></script>
-```
-
-Inclure un fichier _carousel.js_ depuis un fichier JS
-
-```js
-import "./carousel.js";
-```
-
-## Exemples d'utilisation de packages externes
-
-### [AOS](https://michalsnik.github.io/aos)
-
-Installer le paquet avec NPM
+3. Utilisez ensuite vos variables à chaque fois que la valeur de votre variable est présente dans le SCSS. Par exemple:
 
 ```
-npm install aos@next
+.my-element {
+  font-size: 12px;
+  color: black;
+  background-color: green;
+}
 ```
 
-Inclure le JS depuis un fichier JS
-
-```js
-import AOS from "aos";
-```
-
-Inclure la CSS depuis un fichier SCSS
-
-```SCSS
-@import "../../node_modules/aos/dist/aos.css";
-```
-
-### [Bootstrap](https://getbootstrap.com)
-
-Installer le paquet avec NPM
+devient
 
 ```
-npm install bootstrap
-```
-
-Inclure la SCSS depuis un fichier SCSS
-
-```SCSS
-@import "bootstrap/scss/bootstrap-grid";
-```
-
-### [Flickity](https://flickity.metafizzy.co)
-
-Installer le paquet avec NPM
-
-```
-npm install flickity
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import Flickity from "flickity";
-```
-
-Inclure la CSS depuis un fichier SCSS
-
-```SCSS
-@import "../../node_modules/flickity/dist/flickity.css";
-```
-
-### [Font Awesome](https://fontawesome.com/)
-
-Installer le paquet avec NPM
-
-```
-npm install @fortawesome/fontawesome-free
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import "@fortawesome/fontawesome-free/js/all.js";
-```
-
-### [GSAP](https://greensock.com/gsap/)
-
-Installer le paquet avec NPM
-
-```
-npm install gsap
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import gsap from "gsap";
-```
-
-Inclure les éventuels plugins
-
-```js
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-```
-
-### [Masonry](https://masonry.desandro.com)
-
-Installer le paquet avec NPM
-
-```
-npm install masonry-layout
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import Masonry from "masonry-layout";
-```
-
-### [ScrollMagic](https://scrollmagic.io)
-
-Installer le paquet avec NPM
-
-```
-npm install scrollmagic
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import ScrollMagic from "scrollmagic";
-```
-
-### [Swiper](https://swiperjs.com)
-
-Installer le paquet avec NPM
-
-```
-npm install swiper@6
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-
-Swiper.use([Navigation, Pagination]);
-```
-
-Inclure la SCSS depuis un fichier SCSS
-
-```SCSS
-@import "swiper/swiper";
-```
-
-### [three.js](https://threejs.org)
-
-Installer le paquet avec NPM
-
-```
-npm install three
-```
-
-Inclure le JS depuis un fichier JS
-
-```js
-import * as THREE from "three";
-```
-
-## Exemple
-
-Un exemple avec l'installation des packages ci-desssus est disponible sur la branche _examples_
-
-```
-git checkout examples
+.my-element {
+  font-size: $myFontSize;
+  color: black;
+  background-color: $myColor;
+}
 ```
