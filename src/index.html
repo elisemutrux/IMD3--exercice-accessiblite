@@ -23,7 +23,7 @@
       2.3. Documentation label: https://developer.mozilla.org/fr/docs/Web/HTML/Element/label#attributs
      3. vérifier le contraste du texte sur le fond
      4. vérifier si, lorsque je change dans les réglages de mon navigateur la taille de police, le texte de mon site change en fonction.
-     5. vérifier si c'est possible de naviguer et soumettre le formulaire au clavier
+     5. vérifier s'il est possible de naviguer et soumettre le formulaire au clavier
 
      Une fois que votre site est accessible, améliorez le SCSS (_form.scss).
      -> Utilisez des variables pour éviter les répétitions.
@@ -33,14 +33,25 @@
      -->
     <main class="container">
       <form class="row g-4" id="form-a11y">
-        <h1>Formulaire de création de compte</h1>
+        <h1 class="form-title">Formulaire de création de compte</h1>
         <div class="col-12">
           <div class="radio-inputs-wrapper">
-            <div><input type="radio" /><span class="label">Madame</span></div>
-            <div><input type="radio" /><span class="label">Monsieur</span></div>
             <div>
-              <input type="radio" /><span class="label"
-                >Ne veut pas le dire</span
+              <input type="radio" name="gender" value="madam" /><span
+                class="label"
+                >Madame</span
+              >
+            </div>
+            <div>
+              <input type="radio" name="gender" value="mister" /><span
+                class="label"
+                >Monsieur</span
+              >
+            </div>
+            <div>
+              <input type="radio" name="gender" value="neither" /><span
+                class="label"
+                >Ne se prononce pas</span
               >
             </div>
           </div>
@@ -50,21 +61,26 @@
             <span class="label">Votre nom</span>
             <span class="mandatory">*</span>
           </div>
-          <input class="input" type="text" placeholder="Nom" />
+          <input class="input" type="text" placeholder="Nom" name="lastName" />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
             <span class="label">Votre prénom</span>
             <span class="mandatory">*</span>
           </div>
-          <input class="input" type="text" placeholder="Prénom" />
+          <input
+            class="input"
+            type="text"
+            placeholder="Prénom"
+            name="firstName"
+          />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
             <span class="label">Votre email</span>
             <span class="mandatory">*</span>
           </div>
-          <input class="input" type="text" placeholder="Email" />
+          <input class="input" type="text" placeholder="Email" name="email" />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
@@ -72,19 +88,29 @@
             <span class="mandatory">*</span>
           </div>
 
-          <input class="input" type="text" placeholder="****" />
+          <input class="input" type="text" placeholder="****" name="password" />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
             <span class="label">Votre année de naissance</span>
           </div>
-          <input class="input" type="text" placeholder="Année de naissance" />
+          <input
+            class="input"
+            type="text"
+            placeholder="Année de naissance"
+            name="birthYear"
+          />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
             <span class="label">Votre adresse</span>
           </div>
-          <input class="input" type="text" placeholder="Adresse" />
+          <input
+            class="input"
+            type="text"
+            placeholder="Adresse"
+            name="adress"
+          />
         </div>
 
         <div class="col-12">
