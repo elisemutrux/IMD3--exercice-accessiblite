@@ -37,38 +37,49 @@
         <div class="col-12">
           <div class="radio-inputs-wrapper">
             <div>
-              <input type="radio" name="gender" value="madam" /><span
+              <input id="mme" type="radio" name="gender" value="madam" /><label
+                for="mme"
                 class="label"
-                >Madame</span
+                >Madame</label
               >
             </div>
             <div>
-              <input type="radio" name="gender" value="mister" /><span
+              <input id="mr" type="radio" name="gender" value="mister" /><label
+                for="mr"
                 class="label"
-                >Monsieur</span
+                >Monsieur</label
               >
             </div>
             <div>
-              <input type="radio" name="gender" value="neither" /><span
-                class="label"
-                >Ne se prononce pas</span
-              >
+              <input
+                id="none"
+                type="radio"
+                name="gender"
+                value="neither"
+              /><label class="label" for="none">Ne se prononce pas</label>
             </div>
           </div>
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
-            <span class="label">Votre nom</span>
-            <span class="mandatory">*</span>
-          </div>
-          <input class="input" type="text" placeholder="Nom" name="lastName" />
-        </div>
-        <div class="col-sm-6 col-12">
-          <div class="label-wrapper">
-            <span class="label">Votre prénom</span>
+            <label for="name" class="label">Votre nom</label>
             <span class="mandatory">*</span>
           </div>
           <input
+            id="name"
+            class="input"
+            type="text"
+            placeholder="Nom"
+            name="lastName"
+          />
+        </div>
+        <div class="col-sm-6 col-12">
+          <div class="label-wrapper">
+            <label for="lastname" class="label">Votre prénom</label>
+            <span class="mandatory">*</span>
+          </div>
+          <input
+            id="lastname"
             class="input"
             type="text"
             placeholder="Prénom"
@@ -77,24 +88,37 @@
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
-            <span class="label">Votre email</span>
+            <label class="label" for="email">Votre email</label>
             <span class="mandatory">*</span>
           </div>
-          <input class="input" type="text" placeholder="Email" name="email" />
+          <input
+            class="input"
+            id="email"
+            type="text"
+            placeholder="Email"
+            name="email"
+          />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
-            <span class="label">Votre mot de passe</span>
+            <label for="password" class="label">Votre mot de passe</label>
             <span class="mandatory">*</span>
           </div>
 
-          <input class="input" type="text" placeholder="****" name="password" />
+          <input
+            id="password"
+            class="input"
+            type="text"
+            placeholder="****"
+            name="password"
+          />
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
-            <span class="label">Votre année de naissance</span>
+            <label for="birthday" class="label">Votre année de naissance</label>
           </div>
           <input
+            id="birthday"
             class="input"
             type="text"
             placeholder="Année de naissance"
@@ -103,9 +127,10 @@
         </div>
         <div class="col-sm-6 col-12">
           <div class="label-wrapper">
-            <span class="label">Votre adresse</span>
+            <label for="adresse" class="label">Votre adresse</label>
           </div>
           <input
+            id="adresse"
             class="input"
             type="text"
             placeholder="Adresse"
@@ -114,7 +139,7 @@
         </div>
 
         <div class="col-12">
-          <span class="btn submit-btn">Soumettre le formulaire</span>
+          <button class="btn submit-btn">Soumettre le formulaire</button>
         </div>
       </form>
     </main>
